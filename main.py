@@ -6,7 +6,10 @@ def replacement(chaine, mot, rep, occ):
     words = [word for word in words if word.strip()]  # Remove empty strings
 
     # Finding occurrences
-    idexs = [i for i, word in enumerate(words) if word == mot]
+    idexs = []
+    for i, word in enumerate(words):
+        if word == mot:
+            idexs.append(i)
 
     # If occurrence is invalid, return the original string
     if occ > len(idexs) or occ < 1:
